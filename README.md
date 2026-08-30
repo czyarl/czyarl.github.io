@@ -1,6 +1,6 @@
 # czyarl.github.io
 
-czyarl 的个人博客，用来保存学习笔记和复查后仍值得长期查阅的旧文章。
+czyarl 的个人博客，用来保存学习笔记，以及从旧博客中筛选后迁入的文章。
 
 站点使用 [Hugo](https://gohugo.io/) 生成，采用仓库内的轻量自有布局，不依赖 Node/npm 或第三方主题。数学公式在构建期生成 HTML+MathML，并自托管 KaTeX 0.17.0 的样式和字体，不需要浏览器端 JavaScript。`main` 分支只保存源码；GitHub Actions 构建后以 Pages artifact 发布到 <https://czyarl.github.io/>。
 
@@ -82,7 +82,7 @@ pwsh ./scripts/report-tags.ps1
 pwsh ./scripts/import-cnblogs.ps1
 ```
 
-脚本当前白名单包含十篇经过复查的文章：
+脚本当前白名单包含十篇经过完整性和保留价值筛选的文章：
 
 - 《每天一个爆零小技巧》
 - 《杜教筛及狄利克雷卷积及一些怪东西》
@@ -95,7 +95,7 @@ pwsh ./scripts/import-cnblogs.ps1
 - 《SDOI 2017“树点涂色”题解》
 - 《ICPC World Finals 2015“Tile Cutting”题解》
 
-后续文章仍应先加入脚本白名单，并经过人工复查再发布，不做整站无差别导入。
+后续文章仍应先加入脚本白名单，并人工确认内容完整、有保留价值后再发布，不做整站无差别导入。迁移只表示存档，不表示旧文中的理解、结论或代码已经重新验证。
 
 ## GitHub Pages
 

@@ -4,11 +4,11 @@
       <header class="article-header narrow">
         <a class="back-link" href="{{ "posts/" | relURL }}">← 返回文章列表</a>
         <div class="article-meta">
-          <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date | time.Format "2006-01-02" }}</time>
+          <span>创建于 <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date | time.Format "2006-01-02" }}</time></span>
           {{ with .Lastmod }}
-            {{ if gt .Unix $.Date.Unix }}<span>更新于 {{ . | time.Format "2006-01-02" }}</span>{{ end }}
+            <span>修改于 <time datetime="{{ .Format "2006-01-02" }}">{{ . | time.Format "2006-01-02" }}</time></span>
           {{ end }}
-          {{ if .Params.legacy }}<span class="legacy-badge">旧文重整</span>{{ end }}
+          {{ if .Params.legacy }}<span class="legacy-badge">旧文存档</span>{{ end }}
         </div>
         <h1>{{ .Title }}</h1>
         {{ with .Description }}<p class="article-deck">{{ . }}</p>{{ end }}
@@ -17,8 +17,8 @@
 
       {{ if .Params.legacy }}
         <aside class="legacy-note narrow">
-          <strong>关于这篇旧文</strong>
-          <p>本文从旧博客迁入，并保留原始发布日期。内容会在迁移过程中逐步复查和整理。{{ with .Params.originalURL }} <a href="{{ . }}">查看原文</a>。{{ end }}</p>
+          <strong>旧文说明</strong>
+          <p>本文从旧博客迁入，仅作存档，并保留原始发布时间。文中的理解、结论和代码可能不完整或有误，也不代表我现在的认识；目前没有系统修订计划，请阅读时自行判断。{{ with .Params.originalURL }} <a href="{{ . }}">查看原文</a>。{{ end }}</p>
         </aside>
       {{ end }}
 
