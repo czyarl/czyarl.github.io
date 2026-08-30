@@ -1,77 +1,15 @@
 {{ define "main" }}
   {{ $posts := (where site.RegularPages "Section" "posts").ByDate.Reverse }}
-  {{ $featured := where $posts "Params.featured" true }}
-  <section class="hero shell">
-    <div class="hero-copy">
-      <p class="eyebrow">CZYARL / NOTES IN PROGRESS</p>
-      <h1>{{ site.Params.tagline }}</h1>
-      <p class="hero-lead">{{ site.Params.description }}</p>
-      <div class="hero-actions">
-        <a class="button button-primary" href="{{ "posts/" | relURL }}">开始阅读</a>
-        <a class="button button-quiet" href="{{ "tags/" | relURL }}">浏览标签</a>
-      </div>
-    </div>
-    <div class="hero-signal" aria-hidden="true">
-      <div class="signal-label">CURRENT FOCUS</div>
-      <div class="signal-code">attention(Q, K, V)</div>
-      <div class="signal-rule"><span></span></div>
-      <div class="signal-grid">
-        <span>AI</span><span>ALGO</span><span>SYSTEMS</span>
-      </div>
-      <div class="signal-orbit"><i></i></div>
-    </div>
-  </section>
-
-  <section class="focus-strip">
-    <div class="shell focus-grid">
-      <div>
-        <span class="focus-index">01</span>
-        <h2>AI 技术</h2>
-        <p>模型、训练、推理，以及落到系统里的真实问题。</p>
-      </div>
-      <div>
-        <span class="focus-index">02</span>
-        <h2>算法</h2>
-        <p>不只记录答案，也记录为什么这样想。</p>
-      </div>
-      <div>
-        <span class="focus-index">03</span>
-        <h2>旧文重整</h2>
-        <p>只迁移仍然值得读、值得修订的内容。</p>
-      </div>
-    </div>
-  </section>
-
-  {{ with $featured }}
-    <section class="section shell">
-      <div class="section-heading">
-        <div>
-          <p class="eyebrow">SELECTED</p>
-          <h2>精选文章</h2>
-        </div>
-        <p>经过复查后留下的知识总结、重要题目和有意思的杂项。</p>
-      </div>
-      <div class="post-grid">
-        {{ range first 3 . }}
-          {{ partial "post-card.html" . }}
-        {{ end }}
-      </div>
-    </section>
-  {{ end }}
-
-  <section class="section shell section-last">
-    <div class="section-heading">
-      <div>
-        <p class="eyebrow">LATEST</p>
-        <h2>最近更新</h2>
-      </div>
+  <section class="home-posts shell narrow section-last">
+    <header class="home-posts-header">
+      <h1>最近文章</h1>
       <a class="text-link" href="{{ "posts/" | relURL }}">全部文章 →</a>
-    </div>
+    </header>
     <div class="latest-list">
-      {{ range first 6 $posts }}
+      {{ range first 10 $posts }}
         {{ partial "post-card.html" . }}
       {{ else }}
-        <p>第一篇文章正在路上。</p>
+        <p class="empty-state">这里暂时还没有文章。</p>
       {{ end }}
     </div>
   </section>

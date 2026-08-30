@@ -12,6 +12,9 @@
     {{- end -}}
   {{- end -}}
 {{- end -}}
+{{- if .IsPage -}}
+  {{- $noop := .Content -}}
+{{- end -}}
 {{- $styles := resources.Get "css/main.css" | minify | fingerprint -}}
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -22,6 +25,9 @@
 <link rel="canonical" href="{{ .Permalink }}">
 <link rel="icon" href="{{ "favicon.svg" | relURL }}" type="image/svg+xml">
 <link rel="manifest" href="{{ "site.webmanifest" | relURL }}">
+{{ if .Store.Get "hasMath" }}
+  <link rel="stylesheet" href="{{ "vendor/katex/katex.min.css" | relURL }}">
+{{ end }}
 <link rel="stylesheet" href="{{ $styles.RelPermalink }}" integrity="{{ $styles.Data.Integrity }}">
 {{ with .OutputFormats.Get "rss" }}
   <link rel="alternate" type="application/rss+xml" title="{{ site.Title }} RSS" href="{{ .Permalink }}">

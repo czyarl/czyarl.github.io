@@ -2,7 +2,7 @@
 
 czyarl 的个人技术博客，主要记录 AI 技术、算法、工程实践，以及复查后仍值得保留的旧文章。
 
-站点使用 [Hugo](https://gohugo.io/) 生成，采用仓库内的轻量自有布局，不依赖 Node/npm 或第三方主题。`main` 分支只保存源码；GitHub Actions 构建后以 Pages artifact 发布到 <https://czyarl.github.io/>。
+站点使用 [Hugo](https://gohugo.io/) 生成，采用仓库内的轻量自有布局，不依赖 Node/npm 或第三方主题。数学公式在构建期生成 HTML+MathML，并自托管 KaTeX 0.17.0 的样式和字体，不需要浏览器端 JavaScript。`main` 分支只保存源码；GitHub Actions 构建后以 Pages artifact 发布到 <https://czyarl.github.io/>。
 
 ## 本地预览
 

@@ -1,8 +1,6 @@
 {{ define "main" }}
   <header class="page-header shell narrow">
-    <p class="eyebrow">TAG LIBRARY</p>
     <h1>标签</h1>
-    <p>标签可以自由组合，但名称来自一份受控词表。没有强制分类，也不会悄悄长出同义标签。</p>
   </header>
   <section class="shell narrow section-last tag-library">
     {{ range $slug, $meta := hugo.Data.tags }}

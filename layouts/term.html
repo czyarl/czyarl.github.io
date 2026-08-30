@@ -2,9 +2,7 @@
   {{ $slug := .Data.Term }}
   {{ $meta := index hugo.Data.tags $slug }}
   <header class="page-header shell narrow">
-    <p class="eyebrow">TAG</p>
     <h1>{{ with $meta }}{{ .label }}{{ else }}{{ .Title }}{{ end }}</h1>
-    {{ with $meta }}<p>{{ .description }}</p>{{ end }}
   </header>
   <section class="shell narrow section-last">
     <div class="latest-list">

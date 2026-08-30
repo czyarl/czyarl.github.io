@@ -1,4 +1,4 @@
-{{- $opts := dict "displayMode" (eq .Type "block") "strict" "warn" "throwOnError" false -}}
+{{- $opts := dict "output" "htmlAndMathml" "displayMode" (eq .Type "block") "strict" "warn" "throwOnError" false -}}
 {{- with try (transform.ToMath .Inner $opts) -}}
   {{- with .Err -}}
     {{- warnf "Unable to render math in %s: %s" $.Position . -}}
@@ -9,5 +9,6 @@
     {{- else -}}
       <span class="math-inline">{{ .Value }}</span>
     {{- end -}}
+    {{- $.Page.Store.Set "hasMath" true -}}
   {{- end -}}
 {{- end -}}

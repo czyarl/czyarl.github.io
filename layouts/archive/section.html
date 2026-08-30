@@ -1,8 +1,6 @@
 {{ define "main" }}
   <header class="page-header shell narrow">
-    <p class="eyebrow">TIMELINE</p>
     <h1>{{ .Title }}</h1>
-    {{ with .Description }}<p>{{ . }}</p>{{ end }}
   </header>
   <section class="archive shell narrow section-last">
     {{ range ((where site.RegularPages "Section" "posts").ByDate.Reverse.GroupByDate "2006") }}

@@ -430,6 +430,26 @@ select {
   padding-bottom: 112px;
 }
 
+.home-posts {
+  padding-top: 84px;
+}
+
+.home-posts-header {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 30px;
+}
+
+.home-posts-header h1 {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: clamp(42px, 6vw, 62px);
+  letter-spacing: -0.05em;
+  line-height: 1.1;
+}
+
 .section-heading {
   display: flex;
   align-items: end;
@@ -837,16 +857,17 @@ select {
 }
 
 .math-block {
+  margin-block: 1.45em;
   max-width: 100%;
   overflow-x: auto;
   overflow-y: hidden;
-  padding-block: 0.8em;
+  padding-block: 0.7em;
+  text-align: center;
 }
 
-.math-block math[display="block"] {
-  display: block;
-  width: max-content;
-  min-width: 100%;
+.math-block .katex-display {
+  min-width: max-content;
+  margin: 0;
 }
 
 .math-inline {
@@ -854,11 +875,16 @@ select {
   max-width: 100%;
   overflow-x: auto;
   overflow-y: hidden;
-  vertical-align: -0.22em;
+  line-height: 1.25;
+  vertical-align: -0.08em;
 }
 
 .math-inline .katex {
-  display: inline-block;
+  font-size: 1.03em;
+}
+
+.math-block .katex {
+  font-size: 1.08em;
 }
 
 .math-error {
@@ -1021,19 +1047,10 @@ select {
 
 .footer-inner {
   display: flex;
-  min-height: 170px;
+  min-height: 112px;
   align-items: center;
   justify-content: space-between;
   gap: 36px;
-}
-
-.footer-inner strong {
-  font-family: var(--serif);
-  font-size: 22px;
-}
-
-.footer-inner p {
-  margin: 5px 0 0;
   color: var(--muted);
   font-size: 13px;
 }
@@ -1148,6 +1165,19 @@ select {
 
   .section {
     padding-top: 72px;
+  }
+
+  .home-posts {
+    padding-top: 58px;
+  }
+
+  .home-posts-header {
+    align-items: baseline;
+    margin-bottom: 24px;
+  }
+
+  .home-posts-header h1 {
+    font-size: 42px;
   }
 
   .section-heading {

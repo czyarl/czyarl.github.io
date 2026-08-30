@@ -1,8 +1,6 @@
 {{ define "main" }}
   <header class="page-header shell narrow">
-    <p class="eyebrow">COLLECTION</p>
     <h1>{{ .Title }}</h1>
-    {{ with .Description }}<p>{{ . }}</p>{{ end }}
     {{ with .Content }}<div class="page-intro prose">{{ . }}</div>{{ end }}
   </header>
 

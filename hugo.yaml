@@ -58,8 +58,7 @@ caches:
     dir: :cacheDir/images
 
 params:
-  description: 记录 AI 技术、算法、工程实践，以及那些值得重新整理的旧笔记。
-  tagline: 理解智能，也理解构成它的算法。
+  description: czyarl 的个人学习笔记。
   author: czyarl
   github: https://github.com/czyarl
 
