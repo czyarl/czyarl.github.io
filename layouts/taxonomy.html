@@ -3,9 +3,16 @@
     <h1>标签</h1>
   </header>
   <section class="shell narrow section-last tag-library">
+    {{ $entries := slice }}
     {{ range $slug, $meta := hugo.Data.tags }}
       {{ $pages := index site.Taxonomies.tags $slug }}
       {{ $count := len $pages }}
+      {{ $entries = $entries | append (dict "slug" $slug "meta" $meta "count" $count) }}
+    {{ end }}
+    {{ range sort $entries "count" "desc" }}
+      {{ $slug := .slug }}
+      {{ $meta := .meta }}
+      {{ $count := .count }}
       {{ if gt $count 0 }}
         <a class="tag-library-item" href="{{ printf "tags/%s/" $slug | relURL }}">
           <span>

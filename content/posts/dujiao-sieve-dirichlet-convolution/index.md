@@ -1,5 +1,5 @@
 ---
-title: "【学习笔记】【数论】杜教筛及狄利克雷卷积及一些怪东西"
+title: "杜教筛、狄利克雷卷积及一些怪东西"
 description: "杜教筛、狄利克雷卷积与常见积性函数的一份旧学习笔记。"
 date: 2019-09-21T21:56:00+08:00
 lastmod: 2021-07-17T13:53:00+08:00
@@ -7,7 +7,7 @@ slug: dujiao-sieve-dirichlet-convolution
 tags:
   - algorithms
   - number-theory
-  - tutorial
+  - notes
 featured: true
 legacy: true
 math: true
@@ -400,7 +400,7 @@ $$\begin{aligned}&\sum\limits_{i=2}^{\frac{n}{z}}\sqrt{\frac{n}{i}}\qquad&(3.1)\
 在实际使用的时候，你可以视两部分的常数差异而微调$z$的取值。
 
 ### 代码
-是这道题：[Luogu P4213 【模板】杜教筛（Sum）](https://www.luogu.org/problemnew/show/P4213)
+是这道题：[Luogu P4213 【模板】杜教筛（Sum）](https://www.luogu.com.cn/problem/P4213)
 注意两处（我第一遍写的时候没有处理好）：
 
 - 一定要记忆化起来，可以用unordered_map，或者直接用（总数的n）/（当前这个数cn）作为下标存起来，但是map会t到怀疑人生

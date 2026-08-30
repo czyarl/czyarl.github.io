@@ -1,5 +1,5 @@
 ---
-title: "【省选】SNOI2020_区间和_LOJ3325/LuoguP6792_线段树/势能分析/SegBeats"
+title: "SNOI 2020「区间和」题解"
 description: "从线段树与势能分析出发，整理 SNOI2020 区间和问题的关键维护方式。"
 date: 2020-11-25T12:24:00+08:00
 lastmod: 2020-11-25T12:27:00+08:00
@@ -8,7 +8,6 @@ tags:
   - algorithms
   - data-structures
   - problem-solution
-  - segment-tree
 featured: true
 legacy: true
 math: true

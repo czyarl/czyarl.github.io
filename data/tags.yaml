@@ -19,9 +19,15 @@ competitive-programming:
     - oi
     - acm
 
+combinatorics:
+  label: 组合数学
+  description: 计数、组合恒等式与离散结构。
+
 data-structures:
   label: 数据结构
   description: 数据结构及其组合、维护与优化。
+  aliases:
+    - segment-tree
 
 deep-learning:
   label: 深度学习
@@ -30,6 +36,14 @@ deep-learning:
 engineering:
   label: 工程实践
   description: 开发、实验与系统实现记录。
+
+game-theory:
+  label: 博弈论
+  description: 组合游戏、策略与均衡问题。
+
+graph-theory:
+  label: 图论
+  description: 图结构、图算法与相关证明。
 
 inference:
   label: 推理
@@ -45,6 +59,12 @@ misc:
   label: 杂项
   description: 有意思，但不必被严格归类的内容。
 
+notes:
+  label: 学习笔记
+  description: 面向长期查阅的知识整理。
+  aliases:
+    - tutorial
+
 number-theory:
   label: 数论
   description: 数论、数论算法与相关证明。
@@ -53,13 +73,17 @@ paper-reading:
   label: 论文阅读
   description: 论文笔记、复现与批判性阅读。
 
+polynomials:
+  label: 多项式
+  description: 多项式算法、卷积与相关计数方法。
+
 problem-solution:
   label: 题解
   description: 值得长期保留的题目分析。
 
-segment-tree:
-  label: 线段树
-  description: 线段树及其变体。
+string-algorithms:
+  label: 字符串算法
+  description: 字符串匹配、自动机与相关数据结构。
 
 systems:
   label: 系统
@@ -68,7 +92,3 @@ systems:
 tips:
   label: 技巧
   description: 实用技巧、经验与容易踩的坑。
-
-tutorial:
-  label: 知识总结
-  description: 面向长期查阅的系统整理。

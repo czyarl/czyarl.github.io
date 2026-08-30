@@ -1,6 +1,8 @@
 public/
 resources/_gen/
 .hugo_build.lock
+.hugo-build-check/
+.visual-check/
 .tools/
 cnblogs_blog_*.zip
 docs/
