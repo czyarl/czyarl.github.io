@@ -705,6 +705,29 @@ select {
   font-size: 14px;
 }
 
+.comments {
+  margin-top: 72px;
+  padding-top: 38px;
+  border-top: 1px solid var(--border);
+}
+
+.comments-header {
+  margin-bottom: 24px;
+}
+
+.comments-header h2 {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: 32px;
+  letter-spacing: -0.035em;
+}
+
+.comments-header p {
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
 .article-layout {
   display: grid;
   width: min(1080px, 100%);

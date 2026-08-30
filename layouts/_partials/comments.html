@@ -1,0 +1,32 @@
+{{- $config := site.Params.giscus -}}
+{{- if $config.enabled -}}
+  {{- $required := slice "repo" "repoId" "category" "categoryId" -}}
+  {{- range $required -}}
+    {{- if not (index $config .) -}}
+      {{- errorf "Giscus is enabled but params.giscus.%s is missing." . -}}
+    {{- end -}}
+  {{- end -}}
+  <section class="comments narrow" aria-labelledby="comments-title">
+    <header class="comments-header">
+      <h2 id="comments-title">评论</h2>
+      <p>欢迎补充和指出问题，但不保证及时回复或修订旧文。</p>
+    </header>
+    <script
+      src="https://giscus.app/client.js"
+      data-repo="{{ $config.repo }}"
+      data-repo-id="{{ $config.repoId }}"
+      data-category="{{ $config.category }}"
+      data-category-id="{{ $config.categoryId }}"
+      data-mapping="pathname"
+      data-strict="1"
+      data-reactions-enabled="1"
+      data-emit-metadata="0"
+      data-input-position="top"
+      data-theme="preferred_color_scheme"
+      data-lang="zh-CN"
+      data-loading="lazy"
+      crossorigin="anonymous"
+      async>
+    </script>
+  </section>
+{{- end -}}

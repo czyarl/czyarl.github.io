@@ -61,6 +61,14 @@ params:
   description: czyarl 的个人学习笔记。
   author: czyarl
   github: https://github.com/czyarl
+  analytics:
+    goatcounter: https://czyarl.goatcounter.com/count
+  giscus:
+    enabled: false
+    repo: czyarl/czyarl.github.io
+    repoId: R_kgDOUIiECQ
+    category: Comments
+    categoryId: ''
 
 menus:
   main:
