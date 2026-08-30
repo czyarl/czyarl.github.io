@@ -871,12 +871,9 @@ select {
 }
 
 .math-inline {
-  display: inline-block;
-  max-width: 100%;
-  overflow-x: auto;
-  overflow-y: hidden;
-  line-height: 1.25;
-  vertical-align: -0.08em;
+  position: relative;
+  top: 0.08em;
+  vertical-align: baseline;
 }
 
 .math-inline .katex {
