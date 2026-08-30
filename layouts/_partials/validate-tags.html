@@ -1,0 +1,12 @@
+{{- range where site.RegularPages "Section" "posts" -}}
+  {{- $page := . -}}
+  {{- range (.Params.tags | default slice) -}}
+    {{- $tag := printf "%v" . -}}
+    {{- if ne $tag (lower $tag) -}}
+      {{- errorf "Tag %q in %s must use lowercase canonical spelling." $tag $page.File.Path -}}
+    {{- end -}}
+    {{- if not (collections.IsSet hugo.Data.tags $tag) -}}
+      {{- errorf "Unknown tag %q in %s. Register it in data/tags.yaml before publishing." $tag $page.File.Path -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}

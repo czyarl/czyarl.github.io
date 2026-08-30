@@ -1,0 +1,25 @@
+{{ define "main" }}
+  <header class="page-header shell narrow">
+    <p class="eyebrow">TIMELINE</p>
+    <h1>{{ .Title }}</h1>
+    {{ with .Description }}<p>{{ . }}</p>{{ end }}
+  </header>
+  <section class="archive shell narrow section-last">
+    {{ range ((where site.RegularPages "Section" "posts").ByDate.Reverse.GroupByDate "2006") }}
+      <div class="archive-year">
+        <h2>{{ .Key }}</h2>
+        <ol>
+          {{ range .Pages }}
+            <li>
+              <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date | time.Format "01-02" }}</time>
+              <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+              {{ if .Params.legacy }}<span>旧文</span>{{ end }}
+            </li>
+          {{ end }}
+        </ol>
+      </div>
+    {{ else }}
+      <p class="empty-state">这里暂时还没有文章。</p>
+    {{ end }}
+  </section>
+{{ end }}

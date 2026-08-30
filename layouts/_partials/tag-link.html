@@ -1,0 +1,3 @@
+{{- $tag := printf "%v" . -}}
+{{- $meta := index hugo.Data.tags $tag -}}
+<a class="tag" href="{{ printf "tags/%s/" ($tag | urlize) | relURL }}">{{ with $meta }}{{ .label }}{{ else }}{{ $tag }}{{ end }}</a>

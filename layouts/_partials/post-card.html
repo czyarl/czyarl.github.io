@@ -1,0 +1,10 @@
+{{- $page := . -}}
+<article class="post-card">
+  <div class="post-card-meta">
+    <time datetime="{{ $page.Date.Format "2006-01-02" }}">{{ $page.Date | time.Format "2006-01-02" }}</time>
+    {{ if $page.Params.legacy }}<span class="legacy-badge">旧文重整</span>{{ end }}
+  </div>
+  <h3><a href="{{ $page.RelPermalink }}">{{ $page.Title }}</a></h3>
+  <p>{{ with $page.Description }}{{ . }}{{ else }}{{ $page.Summary | plainify | htmlUnescape | truncate 132 }}{{ end }}</p>
+  {{ partial "tag-list.html" $page }}
+</article>

@@ -1,0 +1,47 @@
+{{ define "main" }}
+  {{ if eq .Section "posts" }}
+    <article class="article shell">
+      <header class="article-header narrow">
+        <a class="back-link" href="{{ "posts/" | relURL }}">← 返回文章列表</a>
+        <div class="article-meta">
+          <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date | time.Format "2006-01-02" }}</time>
+          {{ with .Lastmod }}
+            {{ if gt .Unix $.Date.Unix }}<span>更新于 {{ . | time.Format "2006-01-02" }}</span>{{ end }}
+          {{ end }}
+          {{ if .Params.legacy }}<span class="legacy-badge">旧文重整</span>{{ end }}
+        </div>
+        <h1>{{ .Title }}</h1>
+        {{ with .Description }}<p class="article-deck">{{ . }}</p>{{ end }}
+        {{ partial "tag-list.html" . }}
+      </header>
+
+      {{ if .Params.legacy }}
+        <aside class="legacy-note narrow">
+          <strong>关于这篇旧文</strong>
+          <p>本文从旧博客迁入，并保留原始发布日期。内容会在迁移过程中逐步复查和整理。{{ with .Params.originalURL }} <a href="{{ . }}">查看原文</a>。{{ end }}</p>
+        </aside>
+      {{ end }}
+
+      <div class="article-layout">
+        <div class="prose article-body">
+          {{ .Content }}
+        </div>
+        {{ if in .TableOfContents "<li>" }}
+          <aside class="toc" aria-label="文章目录">
+            <p>目录</p>
+            {{ .TableOfContents }}
+          </aside>
+        {{ end }}
+      </div>
+    </article>
+  {{ else }}
+    <article class="article shell narrow section-last">
+      <header class="page-header">
+        <p class="eyebrow">PAGE</p>
+        <h1>{{ .Title }}</h1>
+        {{ with .Description }}<p>{{ . }}</p>{{ end }}
+      </header>
+      <div class="prose article-body">{{ .Content }}</div>
+    </article>
+  {{ end }}
+{{ end }}

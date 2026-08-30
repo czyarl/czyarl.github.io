@@ -1,0 +1,74 @@
+ai:
+  label: AI
+  description: 人工智能相关的理论、方法与实践。
+  aliases:
+    - artificial-intelligence
+
+agents:
+  label: Agents
+  description: 智能体、工具调用与多步任务系统。
+
+algorithms:
+  label: 算法
+  description: 算法设计、分析与实现。
+
+competitive-programming:
+  label: 算法竞赛
+  description: 竞赛经验、题目复盘与训练方法。
+  aliases:
+    - oi
+    - acm
+
+data-structures:
+  label: 数据结构
+  description: 数据结构及其组合、维护与优化。
+
+deep-learning:
+  label: 深度学习
+  description: 神经网络、训练方法与模型结构。
+
+engineering:
+  label: 工程实践
+  description: 开发、实验与系统实现记录。
+
+inference:
+  label: 推理
+  description: 模型推理、服务与性能优化。
+
+llm:
+  label: LLM
+  description: 大语言模型的训练、推理与应用。
+  aliases:
+    - large-language-model
+
+misc:
+  label: 杂项
+  description: 有意思，但不必被严格归类的内容。
+
+number-theory:
+  label: 数论
+  description: 数论、数论算法与相关证明。
+
+paper-reading:
+  label: 论文阅读
+  description: 论文笔记、复现与批判性阅读。
+
+problem-solution:
+  label: 题解
+  description: 值得长期保留的题目分析。
+
+segment-tree:
+  label: 线段树
+  description: 线段树及其变体。
+
+systems:
+  label: 系统
+  description: 系统设计、基础设施与性能工程。
+
+tips:
+  label: 技巧
+  description: 实用技巧、经验与容易踩的坑。
+
+tutorial:
+  label: 知识总结
+  description: 面向长期查阅的系统整理。

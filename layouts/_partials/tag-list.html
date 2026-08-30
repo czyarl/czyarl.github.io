@@ -1,0 +1,7 @@
+{{- with .Params.tags -}}
+  <div class="tag-list" aria-label="标签">
+    {{- range . -}}
+      {{ partial "tag-link.html" . }}
+    {{- end -}}
+  </div>
+{{- end -}}

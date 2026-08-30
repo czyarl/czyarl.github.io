@@ -1,0 +1,79 @@
+baseURL: https://czyarl.github.io/
+locale: zh-CN
+defaultContentLanguage: zh
+title: czyarl
+timeZone: Asia/Shanghai
+hasCJKLanguage: true
+enableRobotsTXT: true
+cleanDestinationDir: true
+summaryLength: 52
+capitalizeListTitles: false
+
+pagination:
+  pagerSize: 10
+
+permalinks:
+  posts: /posts/:slug/
+
+taxonomies:
+  tag: tags
+
+outputs:
+  home:
+    - html
+    - rss
+  section:
+    - html
+    - rss
+  taxonomy:
+    - html
+    - rss
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+    extensions:
+      passthrough:
+        enable: true
+        delimiters:
+          block:
+            - ['\[', '\]']
+            - ['$$', '$$']
+          inline:
+            - ['\(', '\)']
+            - ['$', '$']
+  highlight:
+    style: github-dark
+    noClasses: true
+    guessSyntax: true
+    lineNos: false
+  tableOfContents:
+    startLevel: 2
+    endLevel: 4
+    ordered: false
+
+caches:
+  images:
+    dir: :cacheDir/images
+
+params:
+  description: 记录 AI 技术、算法、工程实践，以及那些值得重新整理的旧笔记。
+  tagline: 理解智能，也理解构成它的算法。
+  author: czyarl
+  github: https://github.com/czyarl
+
+menus:
+  main:
+    - name: 文章
+      pageRef: /posts
+      weight: 10
+    - name: 标签
+      pageRef: /tags
+      weight: 20
+    - name: 归档
+      pageRef: /archive
+      weight: 30
+    - name: 关于
+      pageRef: /about
+      weight: 40
