@@ -64,11 +64,11 @@ params:
   analytics:
     goatcounter: https://czyarl.goatcounter.com/count
   giscus:
-    enabled: false
+    enabled: true
     repo: czyarl/czyarl.github.io
     repoId: R_kgDOUIiECQ
     category: Comments
-    categoryId: ''
+    categoryId: 'DIC_kwDOUIiECc4DEjG8'
 
 menus:
   main:
